@@ -1,0 +1,54 @@
+if (keyboard_check_pressed(ord("E"))) {
+show_message("Quanto é 3²?");
+var resposta = get_integer("Digite o resultado:", 0);
+if (resposta == 9) {
+show_message("Correto! Porta desbloqueada.");
+global.porta_aberta = true;
+} else {
+show_message("Errado! Tente novamente.");
+}
+}
+
+if (keyboard_check_pressed(ord("E"))) {
+show_message("Quanto é √49?");
+var resposta = get_integer("Digite o resultado:", 0);
+if (resposta == 7) {
+show_message("Correto! Porta desbloqueada.");
+global.porta_aberta = true;
+} else {
+show_message("Errado! Tente novamente.");
+}
+}
+
+if (keyboard_check_pressed(ord("E"))) {
+show_message("Quanto é 2⁴?");
+var resposta = get_integer("Digite o resultado:", 0);
+if (resposta == 16) {
+show_message("Correto! Porta desbloqueada.");
+global.porta_aberta = true;
+} else {
+show_message("Errado! Tente novamente.");
+}
+}
+
+if (keyboard_check_pressed(ord("E"))) {
+show_message("Quanto é √50? (arredonde para inteiro mais próximo)");
+var resposta = get_integer("Digite o resultado:", 0);
+if (resposta == 7) {
+show_message("Correto! Porta desbloqueada.");
+global.porta_aberta = true;
+} else {
+show_message("Errado! Tente novamente.");
+}
+}
+
+if (keyboard_check_pressed(ord("E"))) {
+show_message("Quanto é √81 + 2³?");
+var resposta = get_integer("Digite o resultado:", 0);
+if (resposta == 17) {
+show_message("Correto! Porta desbloqueada.");
+global.porta_aberta = true;
+} else {
+show_message("Errado! Tente novamente.");
+}
+}
