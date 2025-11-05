@@ -14,3 +14,49 @@ if keyboard_check(vk_down)
 {
 	y+=3
 }
+
+if keyboard_check(vk_left)
+{
+	x-=3
+}
+if keyboard_check(vk_right)
+{
+	x+=3
+}
+if keyboard_check(vk_up)
+{
+	y-=3
+}
+if keyboard_check(vk_down)
+{
+	y+=3
+}
+
+// 1. Verifique se o personagem está se movendo
+if (_hsp != 0 || _vsp != 0)
+{
+    // Se estiver se movendo, use o Sprite de Movimento
+    sprite_index = Personagem_Andando;
+    // Garante que a animação continue (se já não estiver)
+    image_speed = 1; 
+
+    //Vira o sprite horizontalmente se estiver indo para a esquerda
+    if (_hsp < 0)
+    {
+        image_xscale = -1; // Vira o sprite para a esquerda
+    }
+    else if (_hsp > 0)
+    {
+        image_xscale = 1; // Deixa o sprite normal para a direita
+    }
+}
+else
+{
+    // 2. Se não estiver se movendo, use o Sprite Parado
+    sprite_index = Personagem_Parado;
+    // Opcional: Se for um sprite estático, pare a animação
+    // Se for uma animação 'idle' (ex: respirando), mantenha image_speed = 1
+    image_speed = 0; 
+    // Opcional: Reinicia o quadro para o primeiro (útil se image_speed = 0)
+    image_index = 0; 
+}
