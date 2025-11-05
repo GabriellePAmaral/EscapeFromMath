@@ -1,0 +1,76 @@
+function Nivel_2()
+{
+    var _op = global.dificuldade;
+    var _num1 = 0;
+    var _num2 = 0;
+    var _correct_answer = 0;
+    var _question = "";
+
+    switch (_op)
+    {
+        case "Fácil": // Subtração direta (resultado >= 0)
+            _num1 = irandom_range(0, 100);
+            _num2 = irandom_range(0,100); 
+            if (_num2 > _num1) // Garante _num1 >= _num2
+			{ 
+                var _temp = _num1;
+                _num1 = _num2;
+                _num2 = _temp;
+            }
+            _correct_answer = _num1 - _num2;
+            _question = "Quanto é " + string(_num1) + " - " + string(_num2) + "?";
+            break;
+            
+        case "Médio": // Divisão Exata
+            var _divisor = irandom_range(2, 12); // O divisor
+            var _quociente = irandom_range(2, 10); // A resposta (quociente)
+            _num1 = _divisor * _quociente; // O dividendo (o número a ser dividido)
+            _num2 = _divisor;
+            _correct_answer = _quociente;
+            _question = "Quanto é " + string(_num1) + " / " + string(_num2) + "?";
+            break;
+            
+        case "Difícil": // Raiz Quadrada Exata
+            _correct_answer = irandom_range(2, 12); // A resposta (a raiz)
+            _num1 = _correct_answer * _correct_answer; // O número a ter a raiz tirada (quadrado perfeito)
+            _num2 = 0; // Não usado
+            _question = "Quanto é √" + string(_num1) + "?";
+            break;
+            
+        default:
+            _correct_answer = 2;
+            _question = "Dificuldade Inválida. Digite 2.";
+            break;
+    }
+
+    // [Restante da lógica de pergunta e verificação é o mesmo do Nivel_1]
+    var resposta = get_integer(_question, 0);
+    
+   	// 3. Verificação da Resposta
+	if (resposta == _correct_answer) 
+	{
+		
+    // AÇÃO DE SUCESSO
+    
+    // 1. Mensagem de Confirmação (Opcional)
+    show_message("Correto! Avançando para o próximo nível.");
+    
+    // 2. AVANÇA PARA A PRÓXIMA ROOM
+    room_goto(Nivel_3_Corredor); 
+    
+    return true; 
+	} 
+	else 
+	{
+		
+    // AÇÃO DE FALHA
+    
+    // 1. Mensagem de Confirmação (Opcional, mas útil)
+    show_message("Errado! A resposta correta era " + string(_correct_answer) + ". Game Over.");
+    
+    // 2. AVANÇA PARA A TELA DE DERROTA
+    room_goto(Cena5); 
+    
+    return false; 
+	}
+}
