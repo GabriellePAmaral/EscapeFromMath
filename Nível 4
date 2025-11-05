@@ -1,0 +1,83 @@
+function Nivel_4()
+{
+    var _op = global.dificuldade;
+    var _num1 = 0;
+    var _num2 = 0;
+    var _correct_answer = 0; //A resposta aqui será sempre um inteiro (arredondado)
+    var _question = "";
+
+    switch (_op)
+    {
+        case "Fácil": // Subtração com resultado negativo (Ex: 10-15)
+            _num1 = irandom_range(0, 100);
+            _num2 = irandom_range(0,100); 
+            if (_num2 < _num1) // Garante _num1 >= _num2
+			{ 
+                var _temp = _num1;
+                _num1 = _num2;
+                _num2 = _temp;
+            }
+            _correct_answer = _num1 - _num2;
+            _question = "Quanto é " + string(_num1) + " - " + string(_num2) + "?";
+            break;
+            
+        case "Médio": // Divisão com resto (número quebrado)
+            var _divisor = irandom_range(4, 10);
+            var _resto = irandom_range(1, _divisor - 1); // Garante resto entre 1 e divisor-1
+            var _quociente = irandom_range(5, 15);
+            _num1 = (_quociente * _divisor) + _resto; // Dividendo
+            _num2 = _divisor;
+            var _real_answer = _num1 / _num2;
+            // A resposta correta para o get_integer() tem que ser a parte inteira (arredondada)
+            _correct_answer = round(_real_answer); 
+            _question = "Quanto é " + string(_num1) + " / " + string(_num2) + "? (Arredonde para o inteiro mais próximo)";
+            break;
+            
+        case "Difícil": // Raiz não exata (arredondar para inteiro mais próximo)
+            var _perfect_square = irandom_range(2, 10); // Raiz exata inicial
+            _num1 = _perfect_square * _perfect_square; // Quadrado perfeito
+            _num1 += 1; // Garante que não é exato
+            
+            var _real_answer = sqrt(_num1); // Raiz real
+            _correct_answer = round(_real_answer); // Resposta arredondad
+            _num2 = 0;
+            _question = "Quanto é √" + string(_num1) + "? (se necessário, arredonde para o inteiro mais próximo)";
+            break;
+            
+        default:
+            _correct_answer = 4;
+            _question = "Dificuldade Inválida. Digite 4.";
+            break;
+    }
+
+    // [Restante da lógica de pergunta e verificação é o mesmo, mas a mensagem de erro é importante]
+    var resposta = get_integer(_question, 0);
+    
+    // 3. Verificação da Resposta
+	if (resposta == _correct_answer) 
+	{
+		
+    // AÇÃO DE SUCESSO
+    
+    // 1. Mensagem de Confirmação (Opcional)
+    show_message("Correto! Avançando para o próximo nível.");
+    
+    // 2. AVANÇA PARA A PRÓXIMA ROOM
+    room_goto(Nivel_5_Terraco); 
+    
+    return true; 
+	} 
+	else 
+	{
+		
+    // AÇÃO DE FALHA
+    
+    // 1. Mensagem de Confirmação (Opcional, mas útil)
+    show_message("Errado! A resposta correta era " + string(_correct_answer) + ". Game Over.");
+    
+    // 2. AVANÇA PARA A TELA DE DERROTA
+    room_goto(Cena5); 
+    
+    return false; 
+	}
+}
