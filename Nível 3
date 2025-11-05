@@ -1,0 +1,70 @@
+function Nivel_3()
+{
+    var _op = global.dificuldade;
+    var _num1 = 0;
+    var _num2 = 0;
+    var _num3 = 0; // Novo número para Soma Múltipla
+    var _correct_answer = 0;
+    var _question = "";
+
+    switch (_op)
+    {
+        case "Fácil": // Soma com múltiplos termos
+            _num1 = irandom_range(0, 100);
+            _num2 = irandom_range(0, 100);
+            _num3 = irandom_range(0, 100);
+            _correct_answer = _num1 + _num2 + _num3;
+            _question = "Quanto é " + string(_num1) + " + " + string(_num2) + " + " + string(_num3) + "?";
+            break;
+            
+        case "Médio": // Multiplicação com dois dígitos
+            _num1 = irandom_range(10, 99);
+            _num2 = irandom_range(10, 99);
+            _correct_answer = _num1 * _num2;
+            _question = "Quanto é " + string(_num1) + " x " + string(_num2) + "?";
+            break;
+            
+        case "Difícil": // Potência com expoente maior
+            _num1 = irandom_range(3, 9); // Base
+            _num2 = irandom_range(3, 9); // Expoente
+            _correct_answer = power(_num1, _num2);
+            _question = "Quanto é " + string(_num1) + " elevado à potência " + string(_num2) + " (" + string(_num1) + "ᵉ" + string(_num2) + ")?";
+            break;
+            
+        default:
+            _correct_answer = 3;
+            _question = "Dificuldade Inválida. Digite 3.";
+            break;
+    }
+
+    // [Restante da lógica de pergunta e verificação é o mesmo]
+    var resposta = get_integer(_question, 0);
+    
+    // 3. Verificação da Resposta
+	if (resposta == _correct_answer) 
+	{
+		
+    // AÇÃO DE SUCESSO
+    
+    // 1. Mensagem de Confirmação (Opcional)
+    show_message("Correto! Avançando para o próximo nível.");
+    
+    // 2. AVANÇA PARA A PRÓXIMA ROOM
+    room_goto(Nivel_4_SalaDeAula); 
+    
+    return true; 
+	} 
+	else 
+	{
+		
+    // AÇÃO DE FALHA
+    
+    // 1. Mensagem de Confirmação (Opcional, mas útil)
+    show_message("Errado! A resposta correta era " + string(_correct_answer) + ". Game Over.");
+    
+    // 2. AVANÇA PARA A TELA DE DERROTA
+    room_goto(Cena5); 
+    
+    return false; 
+	}
+}
