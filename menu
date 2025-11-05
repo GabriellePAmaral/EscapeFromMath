@@ -1,0 +1,63 @@
+// --- CONFIGURAÇÕES INICIAIS DO MENU - evento create ---
+
+// Opções disponíveis
+menu_opcoes = ["Jogar", "Dificuldade: Fácil", "Sair"];
+menu_index = 0;
+
+// Dificuldade inicial
+global.dificuldade = "Fácil";
+
+// Para mudar cor de destaque
+cor_normal = c_white;
+cor_selecionada = c_yellow;
+
+// Evento Step - obj- menu
+
+// Mover seleção
+if (keyboard_check_pressed(vk_up))
+    selected = max(0, selected - 1);
+
+if (keyboard_check_pressed(vk_down))
+    selected = min(array_length(options) - 1, selected + 1);
+
+// Confirmar
+if (keyboard_check_pressed(vk_enter))
+{
+    switch (selected)
+    {
+        case 0: // Jogar
+            room_goto(Nivel_1_Sala);
+            break;
+
+        case 1: // Mudar dificuldade
+            if (global.dificuldade == "Fácil") global.dificuldade = "Médio";
+            else if (global.dificuldade == "Médio") global.dificuldade = "Difícil";
+            else global.dificuldade = "Fácil";
+            break;
+
+        case 2: // Sair do jogo
+            game_end();
+            break;
+    }
+}
+
+// Evento Draw - obj_menu
+
+// Configura posição do menu
+var base_x = 400;
+var base_y = 300;
+
+// Mostra as opções
+for (var i = 0; i < array_length(options); i++)
+{
+    if (i == selected)
+        draw_set_color(c_yellow);
+    else
+        draw_set_color(c_white);
+
+    draw_text(base_x, base_y + i * 50, options[i]);
+}
+
+// mostra dificuldade atual
+draw_set_color(c_white);
+draw_text(base_x, base_y + array_length(options) * 50 + 20, "Dificuldade: " + string(global.dificuldade));
