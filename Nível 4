@@ -35,6 +35,7 @@ function Nivel_4()
    		_correct_answer = round(_real_answer); 
     	_question = "Quanto é " + string(_num1) + " / " + string(_num2) + "? (Arredonde para o inteiro mais próximo)";
     	break;
+
             
         case "Difícil": // Raiz não exata (arredondar para inteiro mais próximo)
             var _perfect_square = irandom_range(2, 10); // Raiz exata inicial
@@ -79,7 +80,7 @@ function Nivel_4()
     show_message("Errado! A resposta correta era " + string(_correct_answer) + ". Game Over.");
     
     // 2. AVANÇA PARA A TELA DE DERROTA
-    room_goto(Cena5); 
+    room_goto(Cena4); 
     
     return false; 
 	}
