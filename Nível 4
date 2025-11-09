@@ -30,7 +30,7 @@ function Nivel_4()
         	_num1 = (_quociente * _divisor) + _resto; // Dividendo
         	_num2 = _divisor;
     	}
-    	while (_num1 < 50); // Condição de validação: Garante que o dividendo é maior que 50.
+    	while (_num1 < 50) // Condição de validação: Garante que o dividendo é maior que 50.
     	var _real_answer = _num1 / _num2;
    		_correct_answer = round(_real_answer); 
     	_question = "Quanto é " + string(_num1) + " / " + string(_num2) + "? (Arredonde para o inteiro mais próximo)";
