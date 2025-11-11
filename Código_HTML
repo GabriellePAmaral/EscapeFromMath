@@ -1,211 +1,231 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <style>
-        body {
-            background-color: black;
-            margin: 0;
-            padding-top: 125px;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
 
-        .tamanho_logo {
-            width: 550px;
-            height: 450px;
-        }
+    <head>
 
-        nav {
-            background-color: hsla(0, 0%, 80%, 0.788);
-            padding: 50px 0px;
-            text-align: center;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            z-index: 100;
-        }
-        nav ul { margin: 0; padding: 0; list-style: none; }
-        nav li { display: inline-block; margin: 0 25px; }
-        nav a {
-            color: #333333;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-        nav a:hover { color: #570808; }
+        <style>
 
-        .foto1 {
-            background-image: url(Imagem_SalaDeAula.png);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+            .cenario1 {background-image: url(Imagem_Esgoto.png);}
 
-        main {
-            padding-bottom: 200px;
-            margin-top: 200px; 
-        }
+            .cenario2 {background-image: url(Imagem_SalaAbandonada.png);}
 
-        .ft23 {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            max-width: 1200px;
-            padding: 0 20px;
-            margin: 0 auto 40px auto; 
-        }
+            .cenario3 {background-image: url(Imagem_Corredor.png);}
 
-        .foto2, .foto3 {
-            aspect-ratio: 16 / 9;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            flex: 1;
-            border-radius: 4px;
-        }
-        .foto2 { background-image: url('Imagem_Esgoto.png'); }
-        .foto3 { background-image: url('Imagem_SalaAbandonada.png'); }
+            .cenario4 {background-image: url(Imagem_SalaDeAula.png);}
 
-        .plot {
-            padding: 60px 40px;
-            background-color: #1a1a1a;
-            text-align: left;
-            max-width: 800px;
-            margin: 50px auto;
-            border-radius: 8px;
-        }
-        .plot h2 {
-            color: #570808;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .plot p {
-            line-height: 1.8;
-            margin-bottom: 1em;
-            color: #ffffff;
-        }
+            .cenario5 {background-image: url(Imagem_Terraço.png);}
 
-        .storyboard {
-            padding: 100px 20px;
-            text-align: center;
-            color: white;
-        }
-        .storyboard h2 {
-            color: #570808;
-            font-size: 2.5em;
-            margin-bottom: 50px; 
-        }
-        .storyboard-c {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .storyboard-topo{
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px; 
-        }
-        .storyboard-baixo{
-            display: flex;
-            justify-content: center;
-            gap: 20px; 
-        }
+            .cenario1,.cenario2,.cenario3,.cenario4,.cenario5 {height: 100%; opacity: 0.7; background-size: cover; background-repeat: no-repeat; background-attachment: fixed;}
 
-        .storyboard-item {
-            flex-basis: 400px;
-            aspect-ratio: 1 / 1;
-            background-color: white;
-            border: 3px solid #570808;
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+            body {background-color: black; text-align: center;}
 
-        footer {
-            background-color: #111;
-            padding: 40px;
-            text-align: center;
-            color: white;
-            margin-top: 50px;
-        }
-        footer h2 { 
-            color: #570808; 
-            margin-top: 30px;
-        }
-        footer p { color: wheat; margin: 8px 0; font-size: 1.1em; }
-        footer a { color: #ffb3b3; text-decoration: none; margin: 0 10px; }
-        footer a:hover { text-decoration: underline; }
+            .tamanho_logo {width: 500px; height: 300px; }
 
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#historia">Sobre</a></li>
-                <li><a href="#storyboard">Storyboard</a></li>
-                <li><a href="#contatos">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="foto1">
-            <img class="tamanho_logo" src="Logo.png">
-        </div>
-    </header>
+            nav {background-color: #ca710b;}
 
-    <main>
-        
-        <div class="plot" id="historia">
+            div {width: 100%; height: 100%;}
+
+            .img {width: 500px; height: 600px; padding: 15px;}
+
+            .img2 {width: 600; height: 350; padding: 20px;}
+
+            .img3 {width: 1200px; height: 700px;}
+
+            .img4 {width: 200px; height: 400px; padding: 20px;}
+
+            h1 {text-align: center; color: #570808; font-size: 30px;}
+
+            h2 {color: #570808;}
+
+            p {color: #ffffff;}
+
+            a {color: #ffffff; text-decoration: none;}
+
+            .p {float: right;}
+
+            .p2 {float: left;}
+
+            .dropdown_btn{background-color: #ca710b; color: aliceblue; padding: 16px; border: none; cursor: pointer;}
+
+            .dropdown{position: relative; display: inline-block; width: 300px; height: 50px;}
+
+            .dropdown-conteudo{display: none; position: absolute; background-color: #c5a61a; box-shadow: 10px 10px #ca710b; z-index: 1; width: 300px; height: 200px;}
+
+            .dropdown-conteudo a{color:rgb(97, 27, 27); padding:12px 16px ; text-decoration: none; display: block;}
+
+            .dropdown-conteudo a:hover{background-color:#b9840f;}
             
-            <div class="ft23">
-                <div class="foto2"></div>
-                <div class="foto3"></div>
+            .dropdown:hover .dropdown-conteudo{display:block;}
+
+            .dropdown:hover .dropdown_btn{background-color: #c5a61a;}
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <img class="tamanho_logo" src="Logo.png">
+
+        </header>
+
+
+
+        <main>
+
+            <nav>
+            
+                <div class="dropdown">
+                <button class="dropdown_btn">Email</button>
+                <div class="dropdown-conteudo">
+                <a>Alice - Designer<br> alicelevy695@gmail.com</a>
+                <a>Carlos - Designer<br> negomanu.toby@gmail.com</a>
+                <a>Gabrielle - Programadora<br>gabijadach@gmail.com</a>
+                </div>
+                </div>
+
+                <div class="dropdown">
+                <button class="dropdown_btn">Instagram</button>
+                <div class="dropdown-conteudo">
+                <a href="https://www.instagram.com/levy_15__?igsh=Zm84MG53NXd0aHY1">Alice - Designer<br> negomanu_</a>
+                <a href="https://www.instagram.com/negomanu_?igsh=MWllOTV2Nm1oamN2dw==">Carlos - Designer<br> levy_15</a>
+                <a href="https://www.instagram.com/leblanc_7w7?igsh=MWZneDZteDhma2M1NA==">Gabrielle - Programadora<br> leblanc_7w7</a>
+                </div>
+                </div>
+
+                <div class="dropdown">
+                <button class="dropdown_btn">Discord</button>
+                <div class="dropdown-conteudo">
+                <a>Alice - Designer <br> lice_15</a>
+                <a>Carlos - Designer <br> anaxx6029</a>
+                <a>Gabrielle - Programadora <br> leblanc6070</a>
+                </div>
+                </div>
+
+            </nav>
+
+            <div>
+                
+                <h1>Sobre o jogo:</h1>
+
+                <p>Desenvolvido em estilo 2D, o jogo permite movimentação pelos cenários, mas o foco está na interação com<br>
+                portas espalhadas pelo ambiente. Cada porta ativa um quiz matemático, cuja dificuldade varia de acordo com o<br>
+                nível escolhido. O jogador precisa vencer cinco níveis para alcançar o fim da jornada.</p>
+
+
+                <h2>Enredo:</h2>
+
+                <p>O jogo apresenta um personagem principal que está ansioso com a chegada de sua prova de<br>
+                matemática. Essa tensão se manifesta em seus sonhos, que se transformam em pesadelos desafiadores:<br>
+                para escapar, ele precisa resolver uma série de perguntas matemáticas que determinarão seu sucesso<br>
+                escolar. A cada erro, a ameaça da reprovação se intensifica. Após superar todos os desafios, o protagonista<br>
+                acorda no dia da prova, e ao final, recebe a notícia se foi aprovado ou reprovado.</p>
+
+                <h2>Códigos principais:</h2>
+
+                <p>Cada porta te leva a um dos códigos essenciais para o jogo</p>
+
+                <a href="https://github.com/GabriellePAmaral/EscapeFromMath/blob/main/N%C3%ADvel%201"><img class="img4" src="Imagem_Esgoto_Porta.png"></a>
+
+                <a href="https://github.com/GabriellePAmaral/EscapeFromMath/blob/main/N%C3%ADvel%202"><img class="img4" src="Imagem_SalaAbandonada_Porta.png"></a>
+
+                <a href="https://github.com/GabriellePAmaral/EscapeFromMath/blob/main/N%C3%ADvel%203"><img class="img4" src="Imagem_Corredor_Porta.png"></a>
+
+                <a href="https://github.com/GabriellePAmaral/EscapeFromMath/blob/main/N%C3%ADvel%204"><img class="img4" src="Imagem_SalaDeAula_Porta.png"></a>
+
+                <a href="https://github.com/GabriellePAmaral/EscapeFromMath/blob/main/N%C3%ADvel%205"><img class="img4" src="Imagem_Terraço_Porta.png"></a>
+            
             </div>
 
-            <h2>PLOT DO JOGO</h2>
-            <p>
-                O personagem principal está ansioso com a chegada da sua prova de 
-                matemática. Essa ansiedade é refletida em seus sonhos, que por algum motivo 
-                se tornaram pesadelos em que ele deve responder uma série de perguntas para 
-                que ele passe de ano, a derrota ocasionará na reprovação do personagem. 
-            </p>
-        </div>
+            <div class="cenario1"></div>
+                    
+            <div>
+                
+                <h1>Sobre o personagem:</h1>
 
-        
-        <div class="storyboard" id="storyboard">
-             <h2>STORYBOARD</h2>
-             
-             <div class="storyboard-container">
-                <div class="storyboard-row-top">
-                    <div class="storyboard-item" style="background-image: url('Storyboard_Cena1.jfif');"></div>
-                </div>
-                <div class="storyboard-row-bottom">
-                    <div class="storyboard-item" style="background-image: url('Storyboard_Cena3.jfif');"></div>
-                    <div class="storyboard-item" style="background-image: url('Storyboard_Cena4.jfif');"></div>
-                </div>
-             </div>
-        </div>
-        
-    </main>
+                <p>Nome: Carla</p>
+                <p>Baseada: Kiljoy - Valorant</p>
+                <p>Breve descrição: Ela é uma simples estudante desesperada para<br>
+                    passar de ano e tentando se encaixar nos padrões da sociedade</p>
 
-    <footer id="contatos">
-        <h2>CRÉDITOS</h2>
-        <p>Alice Peters Gonçalves Do Prado Levy</p>
-        <p>Carlos Eduardo Silva Santos</p>
-        <p>Gabrielle Pereira do Amaral</p>
-        <p>Jefferson Callisaya Condori</p>
-        <p>Renan Yuiti Yura</p>
+                <br><br>
 
-        <h2>CONTATO</h2>
-        <p>Email: <a href="mailto:contato@escapefrommath.com">contato@escapefrommath.com</a></p>
-        <p>
-            <a href="#">Instagram</a> |
-            <a href="#">Twitter/X</a>
-        </a:p>
-    </footer>
-</body>
+                <h2>Sprites:</h2>
+
+                <img class="img" src="Protagonista_Frente.png">
+
+                <img class="img" src="Protagonista_Lado2.png">
+
+                <img class="img" src="Protagonista_Lado3.png">
+            
+            </div>
+
+            <div class="cenario2"></div>
+
+            <div>
+                
+                <h1>Storyboard:</h1>
+
+                <img class="img2" src="Storyboard_Cena1.jfif">
+
+                <img class="img2" src="Storyboard_Cena2.jpeg">
+
+                <img class="img2" src="Storyboard_Cena3.jfif">
+
+                <img class="img2" src="Storyboard_Cena4.jfif">
+            
+            </div>
+
+            <div class="cenario3"></div>
+
+            <div>
+                
+                <h1>Tutorial:</h1>
+
+                <p>O jogo é dividido em 5 fases por nível, com 3 níveis de dificuldade: fácil, médio e difícil. Cada fase apresenta uma<br>
+                pergunta de matemática que o jogador precisa acertar para avançar para a próxima sala.</p>
+
+                <h2>Movimento nos níveis 1, 2 e 5:</h2>
+
+                <img style="width: 200; height: 150;" src="Tecla_DireitaEsquerda.png">
+
+                <h2>Movimento nos níveis 3 e 4:</h2>
+
+                <img style="width: 150; height: 200;" src="Tecla_CimaBaixo.png">
+
+                <h2>Interagir</h2>
+
+                <img style="width: 150; height: 150;" src="Tecla_E.png">
+
+                <h2>GamePlay:</h2>
+
+                <p><a href="https://drive.google.com/drive/folders/1lryow3Z7Zn40b1ISZWMQPbTZvLriTrGX?usp=sharing">Clique aqui para assistir a GamePlay</a></p>
+            
+            </div>
+
+            <div class="cenario4"></div>
+
+            <div>
+                
+                <h1>Jogue:</h1>
+
+                <p>Clique na imagem abaixo para ser redirecionado.</p>
+
+                <a href="https://gabriellep.itch.io/escapefrommath"><img class="img3" src="Imagem_TelaPrincipal_SemStart.png"></a>
+            
+            </div>
+
+            <div class="cenario5"></div>
+
+        </main>
+
+        <footer>
+
+            <p>@Todos os direitos reservados.</p>
+            
+        </footer>
+
+    </body>
+
 </html>
