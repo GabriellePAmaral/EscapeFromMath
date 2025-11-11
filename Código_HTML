@@ -88,8 +88,8 @@
                 <div class="dropdown">
                 <button class="dropdown_btn">Instagram</button>
                 <div class="dropdown-conteudo">
-                <a href="https://www.instagram.com/levy_15__?igsh=Zm84MG53NXd0aHY1">Alice - Designer<br> negomanu_</a>
-                <a href="https://www.instagram.com/negomanu_?igsh=MWllOTV2Nm1oamN2dw==">Carlos - Designer<br> levy_15</a>
+                <a href="https://www.instagram.com/levy_15__?igsh=Zm84MG53NXd0aHY1">Alice - Designer<br> levy_15_</a>
+                <a href="https://www.instagram.com/negomanu_?igsh=MWllOTV2Nm1oamN2dw==">Carlos - Designer<br> negomanu </a>
                 <a href="https://www.instagram.com/leblanc_7w7?igsh=MWZneDZteDhma2M1NA==">Gabrielle - Programadora<br> leblanc_7w7</a>
                 </div>
                 </div>
@@ -210,7 +210,7 @@
                 
                 <h1>Jogue:</h1>
 
-                <p>Clique na imagem abaixo para ser redirecionado (compatível apenas com computador).</p>
+                <p>Clique na imagem abaixo para ser redirecionado ao hospedeiro do jogo (compatível apenas com computador).</p>
 
                 <a href="https://gabriellep.itch.io/escapefrommath"><img class="img3" src="Imagem_TelaPrincipal_SemStart.png"></a>
             
