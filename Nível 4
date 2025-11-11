@@ -21,20 +21,24 @@ function Nivel_4()
             _question = "Quanto é " + string(_num1) + " - " + string(_num2) + "?";
             break;
             
-        case "Médio": // Divisão com resto (número quebrado)
-    	var _divisor, _resto, _quociente;
-    	{
-        	_divisor = irandom_range(4, 10);
-        	_resto = irandom_range(1, _divisor - 1); 
-        	_quociente = irandom_range(5, 15);
-        	_num1 = (_quociente * _divisor) + _resto; // Dividendo
-        	_num2 = _divisor;
-    	}
-    	while (_num1 < 50) // Condição de validação: Garante que o dividendo é maior que 50.
-    	var _real_answer = _num1 / _num2;
-   		_correct_answer = round(_real_answer); 
-    	_question = "Quanto é " + string(_num1) + " / " + string(_num2) + "? (Arredonde para o inteiro mais próximo)";
-    	break;
+		case "Médio": // Divisão com resto (número quebrado)
+		{
+			var _divisor, _resto, _quociente;
+			// Inicia _num1 com um valor que força o loop a rodar pelo menos uma vez (se for menor que 50)
+			_num1 = 0; 
+			while (_num1 < 50) 
+			{
+				_divisor = irandom_range(4, 10);
+				_resto = irandom_range(1, _divisor - 1);  
+				_quociente = irandom_range(5, 15);
+				_num1 = (_quociente * _divisor) + _resto;
+				_num2 = _divisor;
+			}
+			var _real_answer = _num1 / _num2;
+			_correct_answer = round(_real_answer); 
+			_question = "Quanto é " + string(_num1) + " / " + string(_num2) + "? (Arredonde para o inteiro mais próximo)";
+			break;
+		}
 
             
         case "Difícil": // Raiz não exata (arredondar para inteiro mais próximo)
@@ -80,7 +84,7 @@ function Nivel_4()
     show_message("Errado! A resposta correta era " + string(_correct_answer) + ". Game Over.");
     
     // 2. AVANÇA PARA A TELA DE DERROTA
-    room_goto(Cena4); 
+    room_goto(Cena4_1); 
     
     return false; 
 	}
